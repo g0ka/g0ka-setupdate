@@ -6,8 +6,15 @@ SCRIPT="$(realpath $0)"
 SCRIPTPATH="$(dirname $SCRIPT)"
 fpath="${SCRIPTPATH}/files"
 
+echo "update..."
+apt-get -y -q update
+apt-get -y -q full-upgrade
+
 echo "installation..."
 apt-get -y -q install golang
+if [ "$(dmidecode | grep -c VirtualBox)" -gt 0 ]; then
+	apt-get -y -q install virtualbox-guest-utils virtualbox-guest-dkms virtualbox-guest-x11
+fi
 
 echo "configuration..."
 cp -f "${fpath}/.vimrc" "${HOME}/.vimrc"
