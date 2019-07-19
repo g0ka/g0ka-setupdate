@@ -19,7 +19,9 @@ fi
 echo "configuration..."
 cp -f "${fpath}/.vimrc" "${HOME}/.vimrc"
 cp -f "${fpath}/.profile" "${HOME}/.profile"
+cp -f "${fpath}/.screenrc" "${HOME}/.screenrc"
 cp -f "${fpath}/xfce4-keyboard-shortcuts.xml" "${HOME}/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml"
+cp -f "${fpath}/terminalrc" "${HOME}/.config/xfce4/terminal/terminalrc"
 
 echo "${rpath} population..."
 mkdir -p "${rpath}"
